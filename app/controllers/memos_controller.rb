@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  before_action :set_memo, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user 
 
   # GET /memos
   # GET /memos.json
@@ -24,17 +24,15 @@ class MemosController < ApplicationController
   # POST /memos
   # POST /memos.json
   def create
-    @memo = Memo.new(memo_params)
+    @memo = current_user.memos.build(memo_params)
 
-    respond_to do |format|
       if @memo.save
-        format.html { redirect_to @memo, notice: 'Memo was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @memo }
+        flash[:success] = "Memo created!"
+        redirect_to root_url
       else
-        format.html { render action: 'new' }
-        format.json { render json: @memo.errors, status: :unprocessable_entity }
+        @feed_items = []
+        render 'static_pages/home'
       end
-    end
   end
 
   # PATCH/PUT /memos/1
@@ -69,6 +67,6 @@ class MemosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def memo_params
-      params.require(:memo).permit(:link, :info, :user_id)
+      params.require(:memo).permit(:link, :info)
     end
 end

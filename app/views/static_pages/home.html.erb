@@ -1,7 +1,15 @@
 <!-- provide title -->
 <% if signed_in? %>
+  <div class="sidebar">
 
-  <p>Welcome.</p>
+    <p class="username">&gt;<%= current_user.username %></p>
+    <%= render 'shared/memo_form' %>
+    
+  </div>
+  <div class="main">
+    <%= render 'shared/feed' %>
+
+  </div>
 
 <% else %>
     

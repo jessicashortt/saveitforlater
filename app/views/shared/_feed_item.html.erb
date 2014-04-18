@@ -1,0 +1,7 @@
+<li id="<%= feed_item.id %>">
+  <span class="title"><%= feed_item.link %></span><br>
+  <span class="memo-link"><%= feed_item.info %></span><br>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+  </span>
+</li>

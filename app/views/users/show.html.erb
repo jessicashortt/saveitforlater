@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
+
+
+<div class="span8">
+    <% if @user.memos.any? %>
+      <h3>Memos (<%= @user.memos.count %>)</h3>
+      <ol class="microposts">
+        <%= render @memos %>
+      </ol>
+    <% end %>
+  </div>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

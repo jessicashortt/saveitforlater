@@ -8,6 +8,7 @@ $red: #ED303C;
 
 //fonts
 $SSPro: "Source Sans Pro", Calibri, sans-serif;
+$Raleway: "Raleway", sans-serif;
 
 
 //mixins
@@ -22,4 +23,7 @@ a:link,
 a:visited {
   text-decoration: none;
   color: black;
+  &:hover {
+    color: $brown;
+  }
 }

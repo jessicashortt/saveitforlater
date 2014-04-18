@@ -2,7 +2,7 @@ Saveitforlater::Application.routes.draw do
   root 'static_pages#home'
 
   resources :users
-  resources :memos
+  resources :memos, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/about',   to: 'static_pages#about',   via: 'get'

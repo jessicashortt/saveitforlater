@@ -1,0 +1,10 @@
+<%= form_for(@memo) do |f| %>
+  <div class="field">
+    <%= f.text_area :info, placeholder: "Title" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :link, placeholder: "Paste link" %>
+  </div>
+  <%= f.submit "Post", class: "memo-post-button" %>
+<% end %>
