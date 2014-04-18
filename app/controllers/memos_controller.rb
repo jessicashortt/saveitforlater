@@ -1,5 +1,6 @@
 class MemosController < ApplicationController
-  before_action :signed_in_user 
+  before_action :signed_in_user, only: [:create, :destroy]
+  before_action :correct_user,   only: :destroy
 
   # GET /memos
   # GET /memos.json
@@ -53,10 +54,7 @@ class MemosController < ApplicationController
   # DELETE /memos/1.json
   def destroy
     @memo.destroy
-    respond_to do |format|
-      format.html { redirect_to memos_url }
-      format.json { head :no_content }
-    end
+   redirect_to root_url
   end
 
   private
@@ -67,6 +65,11 @@ class MemosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def memo_params
-      params.require(:memo).permit(:link, :info)
+      params.require(:memo).permit(:info, :link)
+    end
+
+    def correct_user
+      @memo = current_user.memos.find_by(id: params[:id])
+      redirect_to root_url if @memo.nil?
     end
 end

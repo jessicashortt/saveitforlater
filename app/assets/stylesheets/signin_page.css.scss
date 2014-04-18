@@ -3,40 +3,49 @@
 .signin-welcome-message {
   // @include box-shadow;
   font-family: $SSPro;
-  background: $orange;
-  width: 250px;
-  margin: 0px auto;
   padding: 50px;
-  border-radius: 3px;
-  h2 {
-    color: white;
-    font-size: 30px;
-  }
-  form {
-    text-align: center;
-
-    .signin-field {
-      padding: 15px;
-      margin: 5px;
-      border-radius: 3px;
-      outline: none;
-      border: none;
-      width: 150px;
-      font-size: 14px;
+  margin: auto;
+  width: 700px;
+  .prelim-message {
+    float: left;
+    text-align: right;
+    width: 300px;
+    h2 {
+      color: $green;
     }
-    .signin-submit {
-      margin-top: 20px;
-      border: none;
-      border-radius: 3px;
-      width: 180px;
-      background: $red;
-      padding: 15px;
-      font-size: 14px;
-      color: white;
-      font-weight: 200;
-      &:hover {
-        cursor: pointer;
-        background: #F5634A;
+    p {
+      line-height: 24px;
+    }
+  }
+  .signin-form {
+    padding: 70px 0 0 150px;
+    form {
+      text-align: center;
+
+      .signin-field {
+        padding: 15px;
+        margin: 5px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        width: 150px;
+        font-size: 14px;
+        border: 1px solid #999;
+      }
+      .signin-submit {
+        margin-top: 20px;
+        border: none;
+        border-radius: 3px;
+        width: 180px;
+        background: $peach;
+        padding: 15px;
+        font-size: 14px;
+        color: white;
+        font-weight: 200;
+        &:hover {
+          cursor: pointer;
+          background: $peach-hover;
+        }
       }
     }
   }

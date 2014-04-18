@@ -2,26 +2,38 @@
 <% if signed_in? %>
   <div class="sidebar">
 
-    <p class="username">&gt;<%= current_user.username %></p>
+    <p class="username"> <%= current_user.username %></p>
     <%= render 'shared/memo_form' %>
-    
+
   </div>
   <div class="main">
-    <%= render 'shared/feed' %>
+    <!-- <h2>links</h2> -->
+    <% if current_user.memos.count == 0 %>
+      <p>No links found here! You must have some stashed away you can't get to yet...right?</p>
+    <% else %>
+      <%= render 'shared/feed' %>
+    <% end %>
 
   </div>
 
 <% else %>
     
   <div class="signin-welcome-message">
-  <h2>Welcome.</h2>
-    <%= form_for(:session, url: sessions_path) do |f| %>
-    <%= f.text_field :username, placeholder: "Username", class: "signin-field" %><br>
-    <%= f.password_field :password, placeholder: "Password", class: "signin-password signin-field" %><br>
-    <%= f.submit "begin", class: "signin-submit" %>
-  <% end %>
+    <div class="prelim-message">
+      <h2>welcome.</h2>
+      <p>
+        Sometimes I'll be on a different computer, have too many tabs open on a different subject or just want to look at something later. Wouldn't it be nice to have a simple place you can just paste a link, give some context and leave it for yourself when you have time? That's exactly what this website is for, your links on your time.
+      </p>
+    </div>
+    <div class="signin-form">
+      <%= form_for(:session, url: sessions_path) do |f| %>
+      <%= f.text_field :username, placeholder: "Username", class: "signin-field" %><br>
+      <%= f.password_field :password, placeholder: "Password", class: "signin-password signin-field" %><br>
+      <%= f.submit "begin", class: "signin-submit" %>
+    </div>
+    <% end %>
 
-  <div class="signin-registermsg">Don't have an account yet? <%= link_to "Register!", signup_path, class: "signup-button" %></div>
+    <!-- <div class="signin-registermsg">Don't have an account yet? <%= link_to "Register!", signup_path, class: "signup-button" %></div> -->
 </div>
 
 <% end %>

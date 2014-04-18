@@ -11,14 +11,68 @@
   .username {
     font-weight: 400;
     font-size: 30px;
+    text-align: center;
+  }
+
+  textarea {
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    border: 1px solid #999;
+    height: 50px;
+    padding: 10px;
+    margin: 5px;
+  }
+  .memo-post-button {
+    border: none;
+    padding: 10px;
+    width: 215px;
+    margin: 5px;
+    background: $peach;
+    color: white;
+    font-size: 14px;
+    &:hover {
+      cursor: pointer;
+      background: $peach-hover;
+    }
   }
 }
 
 .main {
   overflow: hidden;
+  width: 60%;
+  h2 {
+    font-weight: normal;
+    font-size: 30px;
+    padding: 5px 35px;
+  }
   ul {
     li {
       list-style: none;
+      padding: 20px 0;
+      a {
+        color: $blue;
+        &:hover {
+          color: $blue-hover;
+        }
+      }
+      .memo-title {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .memo-link {
+        padding: 5px 10px;
+        // font-weight: 300;
+      }
+      .memo-delete {
+        padding: 0 10px;
+        a {
+          color: #e0e0e0;
+          &:hover {
+            color: $blue-hover;
+          }
+        }
+      }
     }
   }
 }
