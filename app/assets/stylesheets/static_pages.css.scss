@@ -1,0 +1,50 @@
+@import 'melee';
+
+.signin-welcome-message {
+  // @include box-shadow;
+  font-family: $SSPro;
+  background: $orange;
+  width: 250px;
+  margin: 0px auto;
+  padding: 50px;
+  border-radius: 3px;
+  h2 {
+    color: white;
+    font-size: 30px;
+  }
+  form {
+    text-align: center;
+
+    .signin-field {
+      padding: 15px;
+      margin: 5px;
+      border-radius: 3px;
+      outline: none;
+      border: none;
+      width: 150px;
+      font-size: 14px;
+    }
+    .signin-submit {
+      margin-top: 20px;
+      border: none;
+      border-radius: 3px;
+      width: 180px;
+      background: $red;
+      padding: 15px;
+      font-size: 14px;
+      color: white;
+      font-weight: 200;
+      &:hover {
+        cursor: pointer;
+        background: #F5634A;
+      }
+    }
+  }
+  .signin-registermsg {
+    padding: 40px 0 0 0;
+    a {
+      border-bottom: 1px dotted black;
+    }
+  }
+
+}

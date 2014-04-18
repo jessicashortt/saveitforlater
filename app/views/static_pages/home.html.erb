@@ -1,0 +1,19 @@
+<!-- provide title -->
+<% if signed_in? %>
+
+  <p>Welcome.</p>
+
+<% else %>
+    
+  <div class="signin-welcome-message">
+  <h2>Welcome.</h2>
+    <%= form_for(:session, url: sessions_path) do |f| %>
+    <%= f.text_field :username, placeholder: "Username", class: "signin-field" %><br>
+    <%= f.password_field :password, placeholder: "Password", class: "signin-password signin-field" %><br>
+    <%= f.submit "begin", class: "signin-submit" %>
+  <% end %>
+
+  <div class="signin-registermsg">Don't have an account yet? <%= link_to "Register!", signup_path, class: "signup-button" %></div>
+</div>
+
+<% end %>

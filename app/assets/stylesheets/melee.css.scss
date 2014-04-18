@@ -1,0 +1,25 @@
+
+
+//colours
+$blue: #3B8183;
+$brown: #403B33;
+$orange: #FF9C5B;
+$red: #ED303C;
+
+//fonts
+$SSPro: "Source Sans Pro", Calibri, sans-serif;
+
+
+//mixins
+@mixin box-shadow {
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         0px 0px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+//rules
+a:link,
+a:visited {
+  text-decoration: none;
+  color: black;
+}

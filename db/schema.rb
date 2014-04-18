@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417211848) do
+ActiveRecord::Schema.define(version: 20140418045145) do
 
   create_table "memos", force: true do |t|
     t.string   "link"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20140417211848) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
   end
+
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end
