@@ -50,10 +50,46 @@
     }
   }
   .signin-registermsg {
-    padding: 40px 0 0 0;
+    padding: 150px 0 0 0;
+    text-align: center;
     a {
       border-bottom: 1px dotted black;
     }
   }
+}
 
+.signup-welcome-message {
+  font-family: $SSPro;
+  text-align: center;
+   h2 {
+      color: $green;
+    }
+  form {
+
+      .signup-field input {
+        padding: 15px;
+        margin: 5px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        width: 150px;
+        font-size: 14px;
+        border: 1px solid #999;
+      }
+      .signup-submit input {
+        margin-top: 20px;
+        border: none;
+        border-radius: 3px;
+        width: 180px;
+        background: $peach;
+        padding: 15px;
+        font-size: 14px;
+        color: white;
+        font-weight: 200;
+        &:hover {
+          cursor: pointer;
+          background: $peach-hover;
+        }
+      }
+    }
 }

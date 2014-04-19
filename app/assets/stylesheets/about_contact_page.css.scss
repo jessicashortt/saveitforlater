@@ -1,0 +1,14 @@
+@import 'melee';
+
+.about, 
+.contact {
+  font-family: $SSPro;
+  padding: 50px 100px;
+  h2 {
+    color: $green;
+    padding-top: 10px;
+  }
+  p {
+    padding: 0 10px;
+  }
+}

@@ -22,6 +22,7 @@
     height: 50px;
     padding: 10px;
     margin: 5px;
+    border-radius: 3px;
   }
   .memo-post-button {
     border: none;
@@ -31,6 +32,7 @@
     background: $peach;
     color: white;
     font-size: 14px;
+    border-radius: 3px;
     &:hover {
       cursor: pointer;
       background: $peach-hover;
@@ -47,6 +49,7 @@
     padding: 5px 35px;
   }
   ul {
+    padding-right: 50px;
     li {
       list-style: none;
       padding: 20px 0;
@@ -61,7 +64,9 @@
         font-weight: 400;
       }
       .memo-link {
-        padding: 5px 10px;
+        position: relative;
+        left: 10px;
+        width: 90%;
         // font-weight: 300;
       }
       .memo-delete {
