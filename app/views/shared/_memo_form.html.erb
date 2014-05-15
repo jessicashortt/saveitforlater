@@ -1,4 +1,5 @@
 <%= form_for(@memo) do |f| %>
+
   <div class="field">
     <%= f.text_area :info, placeholder: "Title" %>
   </div>
@@ -7,4 +8,10 @@
     <%= f.text_area :link, placeholder: "Paste link" %>
   </div>
   <%= f.submit "save", class: "memo-post-button" %>
+
+  <!-- <a href="javascript: alert('bookmarklet!')">clicky click me</a> -->
+<!-- 
+javascript:location.href='http://del.icio.us/post?v=4;
+url='+encodeURIComponent(location.href)+';
+title='+encodeURIComponent(document.title) -->
 <% end %>

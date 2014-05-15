@@ -5,17 +5,19 @@ class MemosController < ApplicationController
   # GET /memos
   # GET /memos.json
   def index
-    @memos = Memo.all
+    redirect_to root_url
   end
 
   # GET /memos/1
   # GET /memos/1.json
   def show
+    @memos = Memo.paginate(page: params[:page], per_page: 15)
   end
 
   # GET /memos/new
   def new
     @memo = Memo.new
+    redirect_to root_url
   end
 
   # GET /memos/1/edit
@@ -29,11 +31,13 @@ class MemosController < ApplicationController
 
       if @memo.save
         flash[:success] = "Memo created!"
-        redirect_to root_url
+        
       else
-        @feed_items = []
-        render 'static_pages/home'
+        # @feed_items = []
+        @memo.errors.full_messages.join('. ')
       end
+
+      redirect_to root_url
   end
 
   # PATCH/PUT /memos/1

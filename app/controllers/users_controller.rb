@@ -4,14 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    redirect_to root_url
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-    @memos = @user.memos
+    redirect_to root_url
   end
 
   # GET /users/new
@@ -28,18 +27,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    # respond_to do |format|
-      if @user.save
-        sign_in @user
-        flash[:success] = "Welcome to Save it for Later!"
-        redirect_to @user
-        # format.html { redirect_to @user, notice: 'User was successfully created.' }
-        # format.json { render action: 'show', status: :created, location: @user }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    # end
+    if @user.save
+      sign_in @user
+      flash[:success] = "Welcome to Save it for Later!"
+      redirect_to root_url
+    else
+      flash[:error] = "Whoops! Looks like some errors in your info"
+    end
   end
 
   # PATCH/PUT /users/1
