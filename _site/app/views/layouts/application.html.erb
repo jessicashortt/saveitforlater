@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>&amp; save it for later</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900,200italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1> &amp; save it for later </h1>
+      <nav>
+        
+        <ul>
+          <% if signed_in? %>
+            <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Home", root_url %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+            <li><%= link_to "Register", signup_path %></li>
+          <% end %>
+        </ul>  
+      </nav>
+    </div>
+
+    <%= yield %>
+
+  </div>
+</body>
+</html>

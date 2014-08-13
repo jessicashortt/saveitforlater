@@ -1,0 +1,94 @@
+@import 'melee';
+
+.signin-welcome-message {
+  font-family: $SSPro;
+  padding: 50px;
+  margin: auto;
+  width: 700px;
+  .prelim-message {
+    float: left;
+    text-align: right;
+    width: 300px;
+    h2 {
+      color: $green;
+    }
+    p {
+      line-height: 24px;
+    }
+  }
+  .signin-form {
+    padding: 70px 0 0 150px;
+    form {
+      text-align: center;
+
+      .signin-field {
+        padding: 15px;
+        margin: 5px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        width: 150px;
+        font-size: 14px;
+        border: 1px solid #999;
+      }
+      .signin-submit {
+        margin-top: 20px;
+        border: none;
+        border-radius: 3px;
+        width: 180px;
+        background: $peach;
+        padding: 15px;
+        font-size: 14px;
+        color: white;
+        font-weight: 200;
+        &:hover {
+          cursor: pointer;
+          background: $peach-hover;
+        }
+      }
+    }
+  }
+  .signin-registermsg {
+    padding: 150px 0 0 0;
+    text-align: center;
+    a {
+      border-bottom: 1px dotted black;
+    }
+  }
+}
+
+.signup-welcome-message {
+  font-family: $SSPro;
+  text-align: center;
+   h2 {
+      color: $green;
+    }
+  form {
+
+      .signup-field input {
+        padding: 15px;
+        margin: 5px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        width: 150px;
+        font-size: 14px;
+        border: 1px solid #999;
+      }
+      .signup-submit input {
+        margin-top: 20px;
+        border: none;
+        border-radius: 3px;
+        width: 180px;
+        background: $peach;
+        padding: 15px;
+        font-size: 14px;
+        color: white;
+        font-weight: 200;
+        &:hover {
+          cursor: pointer;
+          background: $peach-hover;
+        }
+      }
+    }
+}

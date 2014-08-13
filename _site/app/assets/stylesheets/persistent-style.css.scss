@@ -1,0 +1,17 @@
+@import 'melee';
+
+.header {
+  font-family: $SSPro;
+  padding: 20px 150px 50px 70px;
+
+  ul {
+    float: right;
+    position: relative;
+    top: -65px;
+    text-transform: lowercase;
+    li {
+      display: inline-block;
+      padding: 0 20px;
+    }
+  }
+}
